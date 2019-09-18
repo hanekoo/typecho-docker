@@ -29,4 +29,5 @@ services:
       MYSQL_DATABASE: typecho
     volumes:
       - ./data:/var/lib/mysql:rw
+      - ./config/mariadb/my.cnf:/etc/mysql/my.cnf
 
