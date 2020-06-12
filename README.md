@@ -11,7 +11,7 @@ git clone https://github.com/hanekoo/typecho-docker.git
 ``` shell script
 git clone https://github.com/typecho/typecho.git ./typecho/
 ```
-3.Open the.env file and modify it as needed
+3.Open the `.env` file and modify it as needed
 ```shell script
 vim .env
 ```
@@ -28,7 +28,7 @@ mariadb data path :`data/matiadb/`
 typecho program path:`typecho/` 
 ### install typecho 
 database address：
- just input mariadb service name：`mariadb`,or get the `mariadb` service container IP:
+ just input mariadb service name:`mariadb`,or get the `mariadb` service container IP:
 ```shell script
 docker ps
 #CONTAINER ID        IMAGE          ...  NAMES
@@ -36,4 +36,5 @@ docker ps
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' typecho-docker_mariadb_1
 #172.20.0.2
 ```
+For more installation steps, please refer to:[Typecho document](http://docs.typecho.org/install)
 
