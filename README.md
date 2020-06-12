@@ -1,4 +1,4 @@
-# # typecho-docker
+# typecho-docker
 
 ## Requirements
 Install [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
