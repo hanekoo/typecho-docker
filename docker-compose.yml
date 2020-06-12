@@ -11,7 +11,11 @@ services:
     depends_on:
       - php
   php:
-    build: ./docker/php
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+      args:
+        - PHP_FPM_VERSION=${PHP_FPM_VERSION}
     volumes:
       - ./typecho:/var/www/html:rw
       - ./config/php/php.ini:/usr/local/etc/php/php.ini
@@ -24,10 +28,10 @@ services:
     environment:
       # MYSQL_ROOT_PASSWORD: typecho-db-passwd
       MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-      MYSQL_USER: typecho
-      MYSQL_PASSWORD: typecho-db-passwd
-      MYSQL_DATABASE: typecho
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
-      - ./data:/var/lib/mysql:rw
+      - ./data/mariadb:/var/lib/mysql:rw
       - ./config/mariadb/my.cnf:/etc/mysql/my.cnf
 
